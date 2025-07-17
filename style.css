@@ -21,16 +21,15 @@
     --shadow-medium: rgba(0, 0, 0, 0.15);
     /* More pronounced shadow */
     --bg-button: #056449;
+    /* Added this variable, but not currently used for main button bg */
 }
 
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    /* Primary font for body */
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
-    /* Improved line-height for readability */
 }
 
 a {
@@ -40,8 +39,8 @@ a {
 }
 
 a:hover {
-    color: var(white);
-    /* Hover color for links */
+    color: var(--accent-color);
+    /* Corrected: was var(white), should be var(--variable-name) or a direct color */
 }
 
 /* --- Header Section --- */
@@ -58,27 +57,20 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
-    /* Slightly thicker border */
     margin-bottom: 1rem;
     box-shadow: 0 6px 12px var(--shadow-medium);
-    /* Stronger shadow */
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    /* Consistent font for headings */
     font-weight: 700;
-    /* Bold */
     font-size: 2.8rem;
-    /* Larger */
     margin-bottom: 0.5rem;
 }
 
 h3 {
     font-family: 'Montserrat', sans-serif;
-    /* Consistent font for headings */
     font-weight: 500;
-    /* Medium weight */
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -86,18 +78,14 @@ h3 {
 }
 
 .social-icons .fa {
-    /* Specific for social icons in header */
     font-size: 2.5rem;
-    /* Larger icons */
     color: var(--text-medium);
-    /* Soft grey */
     padding: 0.4rem;
     transition: color 0.3s ease;
 }
 
 .social-icons .fa:hover {
     color: var(--accent-color);
-    /* Accent color on hover */
 }
 
 /* --- General Layout --- */
@@ -105,22 +93,17 @@ h3 {
     max-width: 960px;
     margin: auto;
     padding: 2.5rem;
-    /* Increased padding */
 }
 
 .container p {
     font-family: 'Open Sans', sans-serif;
-    /* Consistent body font */
     color: var(--text-medium);
     font-size: 1.1rem;
-    /* Slightly larger text for readability */
     line-height: 1.7;
-    /* Improved line height */
 }
 
 .section {
     margin-bottom: 4rem;
-    /* Increased margin between sections */
 }
 
 h2 {
@@ -129,58 +112,53 @@ h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     color: var(--text-dark);
-    text-align: left;
+    text-align: center;
+    /* Centered for section titles */
     position: relative;
-    /* padding-bottom: 0.8rem; */
-    /* More space before underline */
+    padding-bottom: 0.8rem;
 }
 
-/* h2::after {
+h2::after {
     content: '';
-    position: absolute;
     display: block;
     width: 80px;
     height: 4px;
     background-color: var(--primary-color);
     margin: 0.5rem auto 0;
     border-radius: 2px;
-} */
+}
 
 /* --- Skills Section --- */
 .skill-category {
     margin-bottom: 2.5rem;
-    /* More space between skill categories */
 }
 
 .skill-category h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    /* Bold */
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
     color: var(--text-dark);
-    text-align: left;
+    text-align: center;
+    /* Centered for skill category titles */
 }
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    justify-content: left;
+    justify-content: center;
+    /* Centered for skill tags */
 }
 
 .skill {
     font-family: 'Open Sans', sans-serif;
-    /* Consistent font */
     color: var(--text-medium);
     font-size: 0.95rem;
-    /* Slightly larger skill tags */
     background: white;
     padding: 0.6rem 1.2rem;
     border-radius: 25px;
-    /* More rounded */
     box-shadow: 0 3px 9px var(--shadow-light);
-    /* Softer shadow */
     white-space: nowrap;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -194,166 +172,199 @@ h2 {
 .project {
     background: white;
     padding: 2rem;
-    /* Increased padding */
     border-radius: 12px;
     box-shadow: 0 6px 18px var(--shadow-medium);
-    /* More prominent shadow for projects */
     margin-bottom: 3rem;
-    /* More space between projects */
 
     display: flex;
+    /* Changed from column to flex, to allow screenshot toggle below */
     flex-direction: column;
+    /* Still column for main project layout */
     align-items: flex-start;
     position: relative;
-    padding-top: 1rem;
-    /* Initial padding-top */
+    padding-top: 2rem;
+    /* Restore padding-top for overall project card */
 }
 
+/* --- New: Project Content Layout --- */
 .project-content {
-    max-width: calc(100% - 2rem - 120px - 2rem);
-    /* Default to full width for content */
-    margin-bottom: 1rem;
+    display: flex;
+    /* Make project-content a flex container */
+    align-items: flex-start;
+    /* Align icon and text to the top */
+    gap: 1.5rem;
+    /* Space between app-icon and project-details */
+    width: 100%;
+    /* Take full width of parent .project */
+    margin-bottom: 1.5rem;
+    /* Space below the header/details section */
+}
+
+.app-icon {
+    width: 190px;
+    /* Restore original width for better visual impact */
+    height: 190px;
+    border-radius: 38px;
+    /* Adjusted border-radius */
+    object-fit: cover;
+    box-shadow: 0 6px 12px var(--shadow-medium);
+    /* No absolute positioning needed here anymore */
+    position: static;
+    /* Ensure it behaves normally in flow */
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    margin-top: 0.5rem;
+    /* Slightly push icon down to align with text baseline */
+}
+
+.project-details {
+    flex-grow: 1;
+    /* Allow project details to take up remaining space */
+    /* Remove any fixed widths or max-widths here, let flexbox handle it */
 }
 
 .project-content h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.8rem;
-    /* Larger project title */
     margin-top: 0;
-    margin-bottom: 0.8rem;
-    /* More space below title */
+    /* Important for flex alignment */
+    margin-bottom: 0.5rem;
+    /* Reduced space after title */
     color: var(--text-dark);
 }
 
 .project-content h4 {
-    /* For "Key Skills Used" */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
-    margin-top: 1.5rem;
-    /* Space above sub-heading */
-    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+    /* Adjusted space above sub-heading */
+    margin-bottom: 0.5rem;
     color: var(--text-dark);
+}
+
+.project p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    /* Space above project description */
+    margin-bottom: 1rem;
 }
 
 .project-content p {
     font-size: 1rem;
-    /* Adjust project description font size */
+    margin-top: 1rem;
+    /* Space above project description */
     margin-bottom: 1rem;
+}
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: left;
+    /* Centered for skill tags */
+}
+
+.project-skill {
+    /* Specific for skills inside projects to differentiate if needed */
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    /* Slightly smaller for project skills */
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px var(--shadow-light);
+    /* Softer shadow for skills */
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-skill:hover {
+    transform: translateY(-2px);
+    /* Less pronounced lift */
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 /* --- Project Links (Buttons) --- */
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    /* Increased gap between buttons */
-    margin-top: 1.5rem;
-    /* More space above links */
+    gap: 10px;
+    /* Adjusted gap */
+    margin-top: 0.8rem;
+    /* Adjusted space above links, closer to skills */
     margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
 }
 
 .project-link-button {
     display: inline-block;
-    background-color: var(--text-medium);
+    background-color: var(--primary-color);
+    /* Used primary-color for consistency */
     color: white;
-    padding: 0.4rem 0.8rem;
-    /* Larger padding */
+    padding: 0.5rem 1rem;
+    /* Restored larger padding for better button feel */
     border-radius: 8px;
     text-decoration: none;
     font-size: 0.95rem;
-    /* Slightly larger font */
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px var(--shadow-medium);
-    /* Clearer shadow */
 }
 
 .project-link-button:hover {
-    background-color: var(--text-light);
+    background-color: var(--accent-color);
     /* Uses accent color on hover */
-    /* transform: translateY(-3px); */
-    /* More pronounced lift */
+    transform: translateY(-2px);
+    /* Slightly pronounced lift */
     box-shadow: 0 8px 16px var(--shadow-medium);
-    /* Stronger shadow on hover */
 }
 
 .project-link-button.disabled {
     background-color: #ccc;
-    /* Grey for disabled buttons */
     color: #666;
     cursor: not-allowed;
     box-shadow: 0 2px 4px var(--shadow-light);
     transform: none;
-    /* No lift */
 }
 
 .project-link-button.disabled:hover {
     background-color: #ccc;
-    /* No change on hover for disabled */
     box-shadow: 0 2px 4px var(--shadow-light);
-}
-
-/* --- App Icon --- */
-.app-icon {
-    width: 160px;
-    /* Reduced size for better fit */
-    height: 160px;
-    border-radius: 32px;
-    /* Adjusted border-radius */
-    object-fit: cover;
-    box-shadow: 0 6px 12px var(--shadow-medium);
-    /* Prominent shadow */
-
-    position: absolute;
-    top: 1.5rem;
-    /* Position from top */
-    right: 2rem;
-    /* Position from right */
-    z-index: 10;
-    /* Ensure it's on top */
 }
 
 /* --- Screenshot Toggle --- */
 .screenshot-toggle-wrapper {
     width: 100%;
     text-align: right;
-    /* Aligns the toggle button to the right */
-    margin-top: 0.5rem;
-    /* Space above toggle */
+    margin-top: 1rem;
+    /* More space above toggle */
     margin-bottom: 0.5rem;
-    /* Space below toggle */
 }
 
 .screenshot-toggle {
     display: inline-flex;
     align-items: center;
     font-size: 1.05rem;
-    /* Slightly larger font */
     font-weight: 600;
-    /* Bolder text */
     color: var(--primary-color);
-    /* Primary color for toggle text */
     cursor: pointer;
     gap: 0.6rem;
-    /* More space between text and icon */
     user-select: none;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .screenshot-toggle:hover {
     color: var(--accent-color);
-    /* Accent color on hover */
     transform: translateY(-2px);
 }
 
 .icon-circle {
     background-color: var(--primary-color);
-    /* Primary color background */
     border-radius: 50%;
     width: 30px;
-    /* Larger circle */
     height: 30px;
     display: flex;
     align-items: center;
@@ -363,67 +374,51 @@ h2 {
 
 .screenshot-toggle:hover .icon-circle {
     background-color: var(--accent-color);
-    /* Accent color on hover */
 }
 
 .arrow {
     display: inline-block;
     font-size: 0.9rem;
-    /* Adjust arrow size */
     color: white;
-    /* White arrow */
     transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
 
 .screenshot-toggle.active .arrow {
     transform: rotate(180deg);
-    /* Rotate when active */
 }
 
 /* --- Screenshot Carousel --- */
 .project-screenshot-carousel {
     display: flex;
-    /* Initially flex to show */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     margin-top: 1rem;
-    /* Adjusted margin-top */
     padding-bottom: 10px;
     border-radius: 12px;
     width: 100%;
     flex-wrap: nowrap;
-    /* Prevent wrapping */
     /* -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
-    /* Fading edges */
     /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
     transition: opacity 0.3s ease, height 0.3s ease;
-    /* Smooth transition for hidden class */
     opacity: 1;
-    /* Default opacity */
     height: auto;
-    /* Default height */
 }
 
 .project-screenshot-carousel.hidden {
     opacity: 0;
     height: 0;
     overflow: hidden;
-    /* Hide overflow when collapsed */
     padding-bottom: 0;
-    /* Remove padding when collapsed */
     margin-top: 0;
-    /* Remove margin when collapsed */
 }
 
 /* Hide Scrollbar */
 .project-screenshot-carousel::-webkit-scrollbar {
     height: 8px;
-    /* Make scrollbar visible but thin */
     background: transparent;
-    /* Make track transparent */
 }
 
 .project-screenshot-carousel::-webkit-scrollbar-thumb {
@@ -433,35 +428,27 @@ h2 {
 
 .project-screenshot-carousel::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.05);
-    /* Lighter track */
 }
 
 .project-screenshot-item {
     flex-shrink: 0;
     width: 100%;
-    /* For smaller screens, takes full width of visible area */
     max-width: 340px;
-    /* Max width for each screenshot */
     min-width: 280px;
-    /* Minimum width to ensure overflow for scrolling */
     height: auto;
     scroll-snap-align: start;
     border-radius: 10px;
     box-shadow: 0 4px 12px var(--shadow-medium);
-    /* Clearer shadow */
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
     padding: 1.8rem;
-    /* More padding */
     background: var(--bg-footer);
-    /* Footer background */
     font-size: 0.9rem;
     color: var(--text-medium);
     margin-top: 4rem;
-    /* More space above footer */
 }
 
 /* --- Responsive Design (Media Queries) --- */
@@ -486,24 +473,43 @@ footer {
         margin-bottom: 3.5rem;
     }
 
+    .project-content {
+        flex-direction: column;
+        /* Stack app-icon and details vertically */
+        align-items: center;
+        /* Center them */
+        gap: 1rem;
+    }
+
     .app-icon {
-        width: 120px;
-        height: 120px;
-        border-radius: 24px;
-        top: 1.5rem;
-        right: 1.5rem;
+        width: 100px;
+        /* Smaller icon on tablets */
+        height: 100px;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+        /* Space below icon when stacked */
+    }
+
+    .project-details {
+        text-align: center;
+        /* Center text content when stacked */
+    }
+
+    .project-content h3,
+    .project-content h4 {
+        text-align: center;
+    }
+
+    .project-links,
+    .skills {
+        justify-content: center;
+        /* Center buttons and skills */
     }
 
     .project {
         padding: 1.5rem;
-        padding-top: 1rem;
-        /* Keep consistent with larger screen for icon position */
-    }
-
-    .project-content {
-        /* Re-calculate max-width for smaller screens if needed, based on new icon size */
-        max-width: calc(100% - 1.5rem - 120px - 1.5rem);
-        /* 100% - padding-right - icon-width - space */
+        padding-top: 1.5rem;
+        /* Adjusted for smaller icons */
     }
 }
 
@@ -521,11 +527,6 @@ footer {
         padding-bottom: 0.6rem;
     }
 
-    /* h2::after {
-        width: 50px;
-        height: 3px;
-    } */
-
     h3 {
         font-size: 1.2rem;
     }
@@ -541,48 +542,41 @@ footer {
     /* Projects Section in Mobile */
     .project {
         flex-direction: column;
-        /* Stack content vertically */
         align-items: center;
-        /* Center content horizontally */
         padding: 1.5rem;
-        /* Adjust padding */
-        padding-top: 6.5rem;
-        /* More padding top for centered icon */
+        padding-top: 1.5rem;
+        /* No special padding-top needed for absolute icon anymore */
     }
 
     .project-content {
-        max-width: 100%;
-        /* Take full width */
+        flex-direction: column;
+        /* Stack app-icon and details vertically */
+        align-items: center;
+        /* Center them */
+        gap: 0.8rem;
+    }
+
+    .app-icon {
+        width: 80px;
+        /* Smallest icon on mobile */
+        height: 80px;
+        border-radius: 16px;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-details {
         text-align: center;
-        /* Center text content */
-        margin-bottom: 1rem;
+        width: 100%;
+        /* Ensure it takes full width when stacked */
     }
 
     .project-content h3,
     .project-content h4 {
         text-align: center;
-        /* Center project titles and sub-headings */
-    }
-
-    .app-icon {
-        position: absolute;
-        top: 1rem;
-        /* Adjust top position for smaller screens */
-        left: 50%;
-        /* Center horizontally */
-        transform: translateX(-50%);
-        /* Adjust for true centering */
-        right: auto;
-        /* Remove right property */
-        width: 80px;
-        /* Keep size consistent with desktop if desired, or make slightly smaller */
-        height: 80px;
-        border-radius: 16px;
     }
 
     .project-links {
         justify-content: center;
-        /* Center buttons */
         gap: 8px;
         margin-top: 1rem;
     }
@@ -592,39 +586,37 @@ footer {
         font-size: 0.85rem;
     }
 
+    .project-skills {
+        justify-content: center;
+    }
+
     .skills {
         justify-content: center;
-        /* Center skills in mobile */
         gap: 0.6rem;
     }
 
     .skill-category h3 {
         text-align: center;
-        /* Center skill category titles */
     }
 
     .project-screenshot-carousel {
         margin-top: 1rem;
         gap: 10px;
         padding-bottom: 5px;
-        /* Adjust padding for scrollbar */
     }
 
     .project-screenshot-item {
         min-width: 85%;
-        /* Make screenshots take up more width on smaller screens, leaving some gap */
         max-width: 100%;
     }
 
     .screenshot-toggle-wrapper {
         text-align: center;
-        /* Center the toggle button */
     }
 }
 
 @media (max-width: 480px) {
     .project-screenshot-item {
         min-width: 90%;
-        /* Even wider for very small screens */
     }
 }
