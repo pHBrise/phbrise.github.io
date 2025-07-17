@@ -20,6 +20,7 @@
     /* Soft shadow */
     --shadow-medium: rgba(0, 0, 0, 0.15);
     /* More pronounced shadow */
+    --bg-button: #056449;
 }
 
 body {
@@ -39,7 +40,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: var(white);
     /* Hover color for links */
 }
 
@@ -128,23 +129,22 @@ h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     color: var(--text-dark);
-    text-align: center;
+    text-align: left;
     position: relative;
-    padding-bottom: 0.8rem;
+    /* padding-bottom: 0.8rem; */
     /* More space before underline */
 }
 
-h2::after {
+/* h2::after {
     content: '';
+    position: absolute;
     display: block;
     width: 80px;
-    /* Longer underline */
     height: 4px;
-    /* Thicker underline */
     background-color: var(--primary-color);
     margin: 0.5rem auto 0;
     border-radius: 2px;
-}
+} */
 
 /* --- Skills Section --- */
 .skill-category {
@@ -159,14 +159,14 @@ h2::after {
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
     color: var(--text-dark);
-    text-align: center;
+    text-align: left;
 }
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    justify-content: center;
+    justify-content: left;
 }
 
 .skill {
@@ -205,12 +205,12 @@ h2::after {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    padding-top: 2rem;
+    padding-top: 1rem;
     /* Initial padding-top */
 }
 
 .project-content {
-    width: 100%;
+    max-width: calc(100% - 2rem - 120px - 2rem);
     /* Default to full width for content */
     margin-bottom: 1rem;
 }
@@ -256,9 +256,9 @@ h2::after {
 
 .project-link-button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--text-medium);
     color: white;
-    padding: 0.7rem 1.4rem;
+    padding: 0.4rem 0.8rem;
     /* Larger padding */
     border-radius: 8px;
     text-decoration: none;
@@ -271,9 +271,9 @@ h2::after {
 }
 
 .project-link-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--text-light);
     /* Uses accent color on hover */
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
     /* More pronounced lift */
     box-shadow: 0 8px 16px var(--shadow-medium);
     /* Stronger shadow on hover */
@@ -297,10 +297,10 @@ h2::after {
 
 /* --- App Icon --- */
 .app-icon {
-    width: 80px;
+    width: 160px;
     /* Reduced size for better fit */
-    height: 80px;
-    border-radius: 18px;
+    height: 160px;
+    border-radius: 32px;
     /* Adjusted border-radius */
     object-fit: cover;
     box-shadow: 0 6px 12px var(--shadow-medium);
@@ -320,9 +320,9 @@ h2::after {
     width: 100%;
     text-align: right;
     /* Aligns the toggle button to the right */
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     /* Space above toggle */
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     /* Space below toggle */
 }
 
@@ -396,9 +396,9 @@ h2::after {
     width: 100%;
     flex-wrap: nowrap;
     /* Prevent wrapping */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
     /* Fading edges */
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
     transition: opacity 0.3s ease, height 0.3s ease;
     /* Smooth transition for hidden class */
     opacity: 1;
@@ -487,22 +487,22 @@ footer {
     }
 
     .app-icon {
-        width: 70px;
-        height: 70px;
-        border-radius: 16px;
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
         top: 1.5rem;
         right: 1.5rem;
     }
 
     .project {
         padding: 1.5rem;
-        padding-top: 2rem;
+        padding-top: 1rem;
         /* Keep consistent with larger screen for icon position */
     }
 
     .project-content {
         /* Re-calculate max-width for smaller screens if needed, based on new icon size */
-        max-width: calc(100% - 1.5rem - 70px - 1.5rem);
+        max-width: calc(100% - 1.5rem - 120px - 1.5rem);
         /* 100% - padding-right - icon-width - space */
     }
 }
@@ -521,10 +521,10 @@ footer {
         padding-bottom: 0.6rem;
     }
 
-    h2::after {
+    /* h2::after {
         width: 50px;
         height: 3px;
-    }
+    } */
 
     h3 {
         font-size: 1.2rem;
@@ -546,7 +546,7 @@ footer {
         /* Center content horizontally */
         padding: 1.5rem;
         /* Adjust padding */
-        padding-top: 5.5rem;
+        padding-top: 6.5rem;
         /* More padding top for centered icon */
     }
 
@@ -577,6 +577,7 @@ footer {
         width: 80px;
         /* Keep size consistent with desktop if desired, or make slightly smaller */
         height: 80px;
+        border-radius: 16px;
     }
 
     .project-links {
@@ -587,7 +588,7 @@ footer {
     }
 
     .project-link-button {
-        padding: 0.6rem 1.1rem;
+        padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }
 
