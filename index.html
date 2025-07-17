@@ -1,35 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ekachai | iOS & Flutter Developer</title>
-  <style>
-    body { font-family: sans-serif; padding: 2rem; background: #fdfdfd; color: #333; }
-    img { border-radius: 12px; max-width: 200px; }
-    a { color: #007aff; text-decoration: none; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <title>Phanvit | iOS & Flutter Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>👋 Hi, I'm Ekachai</h1>
-  <p>iOS & Flutter Developer with 6+ years experience.</p>
+  <script>
+    function toggleScreenshots(toggle) {
+      const carousel = toggle.nextElementSibling;
+      const isHidden = carousel.classList.contains('hidden'); // Check for 'hidden' class
+      carousel.classList.toggle('hidden', !isHidden); // Toggle 'hidden' class
+      toggle.classList.toggle('active', isHidden); // Toggle 'active' class on the toggle button
+      // For better UX, you might want to scroll to the top of the project when expanding
+      if (isHidden) {
+        carousel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+  <header>
+    <img src="https://avatars.githubusercontent.com/phbrise" alt="Profile Picture" class="profile-img" />
+    <h1>Phanvit Chevamongkolnimit</h1>
+    <h3>iOS & Flutter Developer</h3>
+    <p class="social-icons">
+      <a href="mailto:phanvit.c@gmail.com"><i class="fa fa-envelope-square"></i></a>
+      <a href="https://github.com/phbrise" target="_blank" rel="noopener noreferrer"><i
+          class="fa fa-github-square"></i></a>
+      <a href="https://linkedin.com/in/phanvit" target="_blank" rel="noopener noreferrer"><i
+          class="fa fa-linkedin-square"></i></a>
+    </p>
+  </header>
 
-  <h2>📱 My Apps</h2>
-  <ul>
-    <li>🛍️ <strong>Rsmall</strong><br>
-      🍎 <a href="https://apps.apple.com/app/id1234567890">iOS App</a> |
-      🤖 <a href="https://play.google.com/store/apps/details?id=com.rsmall.app">Android App</a> |
-      🐱 <a href="https://github.com/your-username/rsmall">GitHub</a>
-    </li>
-    <li>🎵 <strong>Coolism</strong><br>
-      🍎 iOS: coming soon | 🤖 Android: coming soon
-    </li>
-  </ul>
+  <div class="container">
+    <section class="section">
+      <h2>About Me</h2>
+      <p>
+        I'm an iOS Developer since 2011, developing iOS apps since 2016. Nothing would make me happier than hearing
+        about your
+        most daring projects. Feel free to contact me and let me know how I can help you.
+      </p>
+    </section>
 
-  <h2>💻 GitHub Profile</h2>
-  <p>🐱 <a href="https://github.com/ekachai">https://github.com/ekachai</a></p>
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skill-category">
+        <h3>iOS Development</h3>
+        <div class="skills">
+          <div class="skill">Swift</div>
+          <div class="skill">UIKit</div>
+          <div class="skill">SwiftUI</div>
+          <div class="skill">Combine</div>
+          <div class="skill">CoreData</div>
+        </div>
+      </div>
 
-  <h2>📬 Contact</h2>
-  <p>Email: your.email@example.com</p>
+      <div class="skill-category">
+        <h3>Cross-Platform (Flutter)</h3>
+        <div class="skills">
+          <div class="skill">Flutter</div>
+          <div class="skill">Dart</div>
+          <div class="skill">Provider</div>
+          <div class="skill">Freezed</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools & Others</h3>
+        <div class="skills">
+          <div class="skill">Firebase</div>
+          <div class="skill">REST APIs</div>
+          <div class="skill">Git</div>
+          <div class="skill">CI/CD</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <img src="https://github.com/user-attachments/assets/e41a4f86-5d9f-403e-8da2-15844cca3db1" alt="Rsmall App Icon"
+          class="app-icon" />
+        <div class="project-content">
+          <h3>RS Mall</h3>
+          <p>RS Mall app is where you can conveniently shop selected, quality HEALTH & WELLBEING products 24/7 at your
+            fingertips. This app offers hot flash deals, exclusive promotions, coupons and irresistible personalized
+            offers. Easily
+            collect and redeem RS Mall PLUS points from your purchases from RS Mall. You can also check your membership
+            status and
+            point balance from the app.</p>
+          <h4>Key Skills Used</h4>
+          <div class="skills">
+            <div class="skill">Swift</div>
+            <div class="skill">UIKit</div>
+            <div class="skill">REST APIs</div>
+            <div class="skill">CI/CD</div>
+          </div>
+          <div class="project-links">
+            <a href="https://apps.apple.com/app/id1234567890" class="project-link-button" target="_blank"
+              rel="noopener noreferrer">App Store</a>
+            <a href="#" class="project-link-button disabled" onclick="return false;">Android (Coming Soon)</a>
+          </div>
+        </div>
+        <div class="screenshot-toggle-wrapper">
+          <div class="screenshot-toggle" onclick="toggleScreenshots(this)">
+            <span class="label">View Screenshots</span>
+            <span class="icon-circle">
+              <i class="fa fa-chevron-down arrow"></i> </span>
+          </div>
+        </div>
+        <div class="project-screenshot-carousel hidden"> <img
+            src="https://via.placeholder.com/340x600/f0f0f0/333333?text=Screenshot+1" alt="Rsmall App Screenshot 1"
+            class="project-screenshot-item" />
+          <img src="https://via.placeholder.com/340x600/f0f0f0/333333?text=Screenshot+2" alt="Rsmall App Screenshot 2"
+            class="project-screenshot-item" />
+          <img src="https://via.placeholder.com/340x600/f0f0f0/333333?text=Screenshot+3" alt="Rsmall App Screenshot 3"
+            class="project-screenshot-item" />
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/120x120/f0f0f0/333333?text=Music+Icon" alt="Coolism Music App Icon"
+          class="app-icon" />
+        <div class="project-content">
+          <h3>🎵 Coolism Music App</h3>
+          <p>Music streaming app with clean architecture and offline support.</p>
+          <h4>Key Skills Used</h4>
+          <div class="skills">
+            <div class="skill">Swift</div>
+            <div class="skill">Combine</div>
+            <div class="skill">Clean Architecture</div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link-button disabled" onclick="return false;">iOS (Coming Soon)</a>
+            <a href="#" class="project-link-button disabled" onclick="return false;">Android (Coming Soon)</a>
+          </div>
+        </div>
+        <div class="screenshot-toggle-wrapper">
+          <div class="screenshot-toggle" onclick="toggleScreenshots(this)">
+            <span class="label">View Screenshots</span>
+            <span class="icon-circle">
+              <i class="fa fa-chevron-down arrow"></i>
+            </span>
+          </div>
+        </div>
+        <div class="project-screenshot-carousel hidden">
+          <img src="https://via.placeholder.com/340x600/e0e0e0/333333?text=Music+Screenshot+1"
+            alt="Coolism App Screenshot 1" class="project-screenshot-item" />
+          <img src="https://via.placeholder.com/340x600/e0e0e0/333333?text=Music+Screenshot+2"
+            alt="Coolism App Screenshot 2" class="project-screenshot-item" />
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/120x120/f0f0f0/333333?text=Weather+Icon" alt="Weather App Icon"
+          class="app-icon" />
+        <div class="project-content">
+          <h3>🌤️ Weather App (Flutter)</h3>
+          <p>Weather forecast app using location, API, and clean architecture (Flutter + MVVM + Freezed).</p>
+          <h4>Key Skills Used</h4>
+          <div class="skills">
+            <div class="skill">Flutter</div>
+            <div class="skill">Dart</div>
+            <div class="skill">MVVM</div>
+            <div class="skill">Freezed</div>
+            <div class="skill">REST APIs</div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/your-username/flutter-weather-app" class="project-link-button" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="screenshot-toggle-wrapper">
+          <div class="screenshot-toggle" onclick="toggleScreenshots(this)">
+            <span class="label">View Screenshots</span>
+            <span class="icon-circle">
+              <i class="fa fa-chevron-down arrow"></i>
+            </span>
+          </div>
+        </div>
+        <div class="project-screenshot-carousel hidden">
+          <img src="https://via.placeholder.com/340x600/d0d0d0/333333?text=Weather+Screenshot+1"
+            alt="Weather App Screenshot 1" class="project-screenshot-item" />
+          <img src="https://via.placeholder.com/340x600/d0d0d0/333333?text=Weather+Screenshot+2"
+            alt="Weather App Screenshot 2" class="project-screenshot-item" />
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <footer>
+    © 2025 Phanvit Chevamongkolnimit — Portfolio Website
+  </footer>
 </body>
+
 </html>

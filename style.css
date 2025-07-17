@@ -1,0 +1,629 @@
+/* --- Root Variables & Base Styles --- */
+:root {
+    --primary-color: #2e2e2e;
+    /* Dark Grey as primary, refined for contrast */
+    --accent-color: #3f51b5;
+    /* A subtle accent color for some elements (e.g., hover) */
+    --bg-light: #fefefe;
+    /* Very light background */
+    --bg-header: #EAE7DC;
+    /* Light beige/grey for header */
+    --bg-footer: #d9d9d9;
+    /* Slightly darker grey for footer */
+    --text-dark: #333;
+    /* Dark text */
+    --text-medium: #555;
+    /* Medium grey text for paragraphs */
+    --text-light: #777;
+    /* Lighter grey text */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    /* More pronounced shadow */
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    /* Primary font for body */
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    /* Improved line-height for readability */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    /* Hover color for links */
+}
+
+/* --- Header Section --- */
+header {
+    background-color: var(--bg-header);
+    color: var(--text-dark);
+    padding: 2rem;
+    text-align: center;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    /* Slightly thicker border */
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 12px var(--shadow-medium);
+    /* Stronger shadow */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font for headings */
+    font-weight: 700;
+    /* Bold */
+    font-size: 2.8rem;
+    /* Larger */
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font for headings */
+    font-weight: 500;
+    /* Medium weight */
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-medium);
+}
+
+.social-icons .fa {
+    /* Specific for social icons in header */
+    font-size: 2.5rem;
+    /* Larger icons */
+    color: var(--text-medium);
+    /* Soft grey */
+    padding: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons .fa:hover {
+    color: var(--accent-color);
+    /* Accent color on hover */
+}
+
+/* --- General Layout --- */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2.5rem;
+    /* Increased padding */
+}
+
+.container p {
+    font-family: 'Open Sans', sans-serif;
+    /* Consistent body font */
+    color: var(--text-medium);
+    font-size: 1.1rem;
+    /* Slightly larger text for readability */
+    line-height: 1.7;
+    /* Improved line height */
+}
+
+.section {
+    margin-bottom: 4rem;
+    /* Increased margin between sections */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.8rem;
+    /* More space before underline */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    /* Longer underline */
+    height: 4px;
+    /* Thicker underline */
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* --- Skills Section --- */
+.skill-category {
+    margin-bottom: 2.5rem;
+    /* More space between skill categories */
+}
+
+.skill-category h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    /* Bold */
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.skill {
+    font-family: 'Open Sans', sans-serif;
+    /* Consistent font */
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    /* Slightly larger skill tags */
+    background: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    /* More rounded */
+    box-shadow: 0 3px 9px var(--shadow-light);
+    /* Softer shadow */
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+/* --- Projects Section --- */
+.project {
+    background: white;
+    padding: 2rem;
+    /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px var(--shadow-medium);
+    /* More prominent shadow for projects */
+    margin-bottom: 3rem;
+    /* More space between projects */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 2rem;
+    /* Initial padding-top */
+}
+
+.project-content {
+    width: 100%;
+    /* Default to full width for content */
+    margin-bottom: 1rem;
+}
+
+.project-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    /* Larger project title */
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    /* More space below title */
+    color: var(--text-dark);
+}
+
+.project-content h4 {
+    /* For "Key Skills Used" */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    /* Space above sub-heading */
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.project-content p {
+    font-size: 1rem;
+    /* Adjust project description font size */
+    margin-bottom: 1rem;
+}
+
+/* --- Project Links (Buttons) --- */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    /* Increased gap between buttons */
+    margin-top: 1.5rem;
+    /* More space above links */
+    margin-bottom: 0.5rem;
+}
+
+.project-link-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.4rem;
+    /* Larger padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    /* Slightly larger font */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    /* Clearer shadow */
+}
+
+.project-link-button:hover {
+    background-color: var(--accent-color);
+    /* Uses accent color on hover */
+    transform: translateY(-3px);
+    /* More pronounced lift */
+    box-shadow: 0 8px 16px var(--shadow-medium);
+    /* Stronger shadow on hover */
+}
+
+.project-link-button.disabled {
+    background-color: #ccc;
+    /* Grey for disabled buttons */
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transform: none;
+    /* No lift */
+}
+
+.project-link-button.disabled:hover {
+    background-color: #ccc;
+    /* No change on hover for disabled */
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+/* --- App Icon --- */
+.app-icon {
+    width: 80px;
+    /* Reduced size for better fit */
+    height: 80px;
+    border-radius: 18px;
+    /* Adjusted border-radius */
+    object-fit: cover;
+    box-shadow: 0 6px 12px var(--shadow-medium);
+    /* Prominent shadow */
+
+    position: absolute;
+    top: 1.5rem;
+    /* Position from top */
+    right: 2rem;
+    /* Position from right */
+    z-index: 10;
+    /* Ensure it's on top */
+}
+
+/* --- Screenshot Toggle --- */
+.screenshot-toggle-wrapper {
+    width: 100%;
+    text-align: right;
+    /* Aligns the toggle button to the right */
+    margin-top: 1.5rem;
+    /* Space above toggle */
+    margin-bottom: 1rem;
+    /* Space below toggle */
+}
+
+.screenshot-toggle {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.05rem;
+    /* Slightly larger font */
+    font-weight: 600;
+    /* Bolder text */
+    color: var(--primary-color);
+    /* Primary color for toggle text */
+    cursor: pointer;
+    gap: 0.6rem;
+    /* More space between text and icon */
+    user-select: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.screenshot-toggle:hover {
+    color: var(--accent-color);
+    /* Accent color on hover */
+    transform: translateY(-2px);
+}
+
+.icon-circle {
+    background-color: var(--primary-color);
+    /* Primary color background */
+    border-radius: 50%;
+    width: 30px;
+    /* Larger circle */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.screenshot-toggle:hover .icon-circle {
+    background-color: var(--accent-color);
+    /* Accent color on hover */
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    /* Adjust arrow size */
+    color: white;
+    /* White arrow */
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-toggle.active .arrow {
+    transform: rotate(180deg);
+    /* Rotate when active */
+}
+
+/* --- Screenshot Carousel --- */
+.project-screenshot-carousel {
+    display: flex;
+    /* Initially flex to show */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin-top: 1rem;
+    /* Adjusted margin-top */
+    padding-bottom: 10px;
+    border-radius: 12px;
+    width: 100%;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* Fading edges */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    transition: opacity 0.3s ease, height 0.3s ease;
+    /* Smooth transition for hidden class */
+    opacity: 1;
+    /* Default opacity */
+    height: auto;
+    /* Default height */
+}
+
+.project-screenshot-carousel.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    /* Hide overflow when collapsed */
+    padding-bottom: 0;
+    /* Remove padding when collapsed */
+    margin-top: 0;
+    /* Remove margin when collapsed */
+}
+
+/* Hide Scrollbar */
+.project-screenshot-carousel::-webkit-scrollbar {
+    height: 8px;
+    /* Make scrollbar visible but thin */
+    background: transparent;
+    /* Make track transparent */
+}
+
+.project-screenshot-carousel::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.project-screenshot-carousel::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Lighter track */
+}
+
+.project-screenshot-item {
+    flex-shrink: 0;
+    width: 100%;
+    /* For smaller screens, takes full width of visible area */
+    max-width: 340px;
+    /* Max width for each screenshot */
+    min-width: 280px;
+    /* Minimum width to ensure overflow for scrolling */
+    height: auto;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    /* Clearer shadow */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1.8rem;
+    /* More padding */
+    background: var(--bg-footer);
+    /* Footer background */
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    margin-top: 4rem;
+    /* More space above footer */
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .section {
+        margin-bottom: 3.5rem;
+    }
+
+    .app-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .project {
+        padding: 1.5rem;
+        padding-top: 2rem;
+        /* Keep consistent with larger screen for icon position */
+    }
+
+    .project-content {
+        /* Re-calculate max-width for smaller screens if needed, based on new icon size */
+        max-width: calc(100% - 1.5rem - 70px - 1.5rem);
+        /* 100% - padding-right - icon-width - space */
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        padding-bottom: 0.6rem;
+    }
+
+    h2::after {
+        width: 50px;
+        height: 3px;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .container p {
+        font-size: 1rem;
+    }
+
+    /* Projects Section in Mobile */
+    .project {
+        flex-direction: column;
+        /* Stack content vertically */
+        align-items: center;
+        /* Center content horizontally */
+        padding: 1.5rem;
+        /* Adjust padding */
+        padding-top: 5.5rem;
+        /* More padding top for centered icon */
+    }
+
+    .project-content {
+        max-width: 100%;
+        /* Take full width */
+        text-align: center;
+        /* Center text content */
+        margin-bottom: 1rem;
+    }
+
+    .project-content h3,
+    .project-content h4 {
+        text-align: center;
+        /* Center project titles and sub-headings */
+    }
+
+    .app-icon {
+        position: absolute;
+        top: 1rem;
+        /* Adjust top position for smaller screens */
+        left: 50%;
+        /* Center horizontally */
+        transform: translateX(-50%);
+        /* Adjust for true centering */
+        right: auto;
+        /* Remove right property */
+        width: 80px;
+        /* Keep size consistent with desktop if desired, or make slightly smaller */
+        height: 80px;
+    }
+
+    .project-links {
+        justify-content: center;
+        /* Center buttons */
+        gap: 8px;
+        margin-top: 1rem;
+    }
+
+    .project-link-button {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    .skills {
+        justify-content: center;
+        /* Center skills in mobile */
+        gap: 0.6rem;
+    }
+
+    .skill-category h3 {
+        text-align: center;
+        /* Center skill category titles */
+    }
+
+    .project-screenshot-carousel {
+        margin-top: 1rem;
+        gap: 10px;
+        padding-bottom: 5px;
+        /* Adjust padding for scrollbar */
+    }
+
+    .project-screenshot-item {
+        min-width: 85%;
+        /* Make screenshots take up more width on smaller screens, leaving some gap */
+        max-width: 100%;
+    }
+
+    .screenshot-toggle-wrapper {
+        text-align: center;
+        /* Center the toggle button */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-screenshot-item {
+        min-width: 90%;
+        /* Even wider for very small screens */
+    }
+}
