@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: white;
     /* Corrected: was var(white), should be var(--variable-name) or a direct color */
 }
 
@@ -164,7 +164,7 @@ h2::after {
 }
 
 .skill:hover {
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
     box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
@@ -282,7 +282,7 @@ h2::after {
 }
 
 .project-skill:hover {
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     /* Less pronounced lift */
     box-shadow: 0 4px 8px var(--shadow-medium);
 }
@@ -301,7 +301,7 @@ h2::after {
 
 .project-link-button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--text-medium);
     /* Used primary-color for consistency */
     color: white;
     padding: 0.5rem 1rem;
@@ -315,9 +315,9 @@ h2::after {
 }
 
 .project-link-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     /* Uses accent color on hover */
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     /* Slightly pronounced lift */
     box-shadow: 0 8px 16px var(--shadow-medium);
 }
@@ -349,7 +349,7 @@ h2::after {
     align-items: center;
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--text-medium);
     cursor: pointer;
     gap: 0.6rem;
     user-select: none;
@@ -357,12 +357,12 @@ h2::after {
 }
 
 .screenshot-toggle:hover {
-    color: var(--accent-color);
-    transform: translateY(-2px);
+    color: var(--primary-color);
+    /* transform: translateY(-2px); */
 }
 
 .icon-circle {
-    background-color: var(--primary-color);
+    background-color: var(--text-medium);
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -373,7 +373,7 @@ h2::after {
 }
 
 .screenshot-toggle:hover .icon-circle {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
 }
 
 .arrow {
